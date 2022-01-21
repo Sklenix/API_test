@@ -1,0 +1,60 @@
+GET http://127.0.0.1:8000/api/customers/3 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:8000/api/customers HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8000/api/customers HTTP/1.1
+Content-Type: application/json
+
+{
+    "customer_name"      :  "TestovacíJméno",
+    "customer_surname"   :  "TestovacíPříjmení",
+    "customer_phone"     :  "123456789",
+    "customer_email"     :  "testovaciemail@seznam.cz",
+    "customer_position"  :  "TestovacíPozice",
+    "customer_note"      :  "Testovací poznámka"
+}
+
+###
+
+PUT http://127.0.0.1:8000/api/customers/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "customer_name"      :  "TestovacíJménoZměna1",
+    "customer_surname"   :  "TestovacíPříjmeníZměna",
+    "customer_phone"     :  "123444555",
+    "customer_email"     :  "testovaciemailzmefa@seznam.cz",
+    "customer_position"  :  "TestovacíPoziceZměna",
+    "customer_note"      :  "Testovací poznámkaZměna"
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/customers/2
+
+###
+
+POST http://127.0.0.1:8000/api/customer/store/group HTTP/1.1
+Content-Type: application/json
+
+{
+    "customer_id"   :    "6",
+    "group_id"      :    "4"
+}
+
+###
+
+PUT http://127.0.0.1:8000/api/customer/store/group/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "customer_id"   :    "6",
+    "group_id"      :    "5"
+}
+
+###
+GET http://127.0.0.1:8000/api/customers/groups/1 HTTP/1.1
